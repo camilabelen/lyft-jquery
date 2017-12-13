@@ -1,7 +1,48 @@
-.splash .logo img{
-  width: 80c%;
+.splash img{
+  width: 100%;
+  margin-top: 50%;
 }
 
 .splash{
-  background-color: #5C25A7;
+  background-color: #380E61;
+  background: linear-gradient(135deg, rgba(82,5,79,1) 0%, rgba(82,5,79,1) 28%, rgba(240,24,182,1) 91%, rgba(240,24,182,1) 100%);
+  height: 35em;
+}
+
+.signUp .whiteLogo{
+  width: 80%;
+  margin-top: 10%;
+}
+
+.signUp .purpleLogo{
+  width: 100%;
+  margin-top: 40%;
+}
+
+.buttons{
+  margin-top: 40%;
+  margin-bottom: 20%;
+}
+
+.signUp{
+  background-image:url(../images/street.jpg);
+  background-size: cover;
+  background-repeat: none;
+  background-position: left top;
+}
+
+.logIn-button{
+  background-color: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+}
+
+.signUp-button{
+  background-color: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+}
+
+.country ul li a img{
+  width: 2em;
 }
