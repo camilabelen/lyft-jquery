@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.signUp').hide();
+  $('.signUp, .phone, .verifyPhone, .name').hide();
   $('.splash').show();
   splash(3000);
   //funcion pagina splash
@@ -8,8 +8,26 @@ $(document).ready(function(){
     $('.splash').fadeOut(); 
     }, time);
     $('.signUp').delay(3500).fadeIn();
-  }  
-  //
+  } 
+  //sign up numero de telefono
+  $('.signUp-button').click(function(){
+    $('.phone').show();
+    $('.signUp, .verifyPhone').hide();
+  });
+  //volver a pagina anterior
+  $('.back').click(function(){
+    $('.phone').hide();
+    $('.signUp').show();
+  });
+  //boton deshabilitado por defecto  
+  $('.phoneNumber').keyup(function(){
+    if($('.phoneNumber').val().length == '' || $('.phoneNumber').val().length != 10){
+      $('.next-button').Attr('disabled',true)
+    }else{
+      $('.next-button').removeAttr('disabled'); //desabilitar boton);
+    };
+  });
+  //codigo
   function code() {
     var code = "";
     var str = "123456789";
@@ -18,7 +36,52 @@ $(document).ready(function(){
     }
       return code;
     }
-  alert(code());  
+  //boton next oculta la seccion y muestra la sgte 
+  $('.next-button').click(function(){
+    $('.phone').hide();
+    $('.verifyPhone').show(function(){
+      alert(code());
+    });    
+  });
+  //volver a pagina anterior
+  $('.backPhone').click(function(){
+    $('.verifyPhone').hide();
+    $('.phone').show();
+  });
+  //boton reenviar codigo
+  $('.resend-button').click(function(){
+    alert(code());
+  });
+  //boton next de la seccion de codigo/verifyPhone
+  $('.next2').click(function(){
+    $('.verifyPhone').hide();
+    $('.name').show();
+  });
+  //deshabilitar boton next
+  $('.phoneNumber').keyup(function(){
+    if($('.phoneNumber').val().length == '' || $('.phoneNumber').val().length != 3){
+      $('.next-button').Attr('disabled',true)
+    }else{
+      $('.next-button').removeAttr('disabled'); //desabilitar boton);
+    };
+  });
+  //seccion de nombre y correo
+  //boton para volver a seccion anterior 
+  $('.backVerify').click(function(){
+    $('.name').hide();
+    $('.verifyPhone').show();
+  });
+  //habilitar el boton si y solo si todas las condiciones se cumplen
+  /*
+   $('.').(function(){
+    if($('.nameInput, .emailInput').val().length !== '' && $('.check').prop('checked')){
+      $('.next-button').Attr('disabled',true)
+    }else{
+      $('.next-button').removeAttr('disabled'); //desabilitar boton);
+    };
+  });
+  */
+
 });
 
  
@@ -26,12 +89,29 @@ $(document).ready(function(){
 
 
 /*
- <div class="input-group-btn country">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Country <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#"><img src="assets/images/mexico_bandera.jpg" alt="bandera_Mexico"></a></li>
-              <li><a href="#"><img src="assets/images/peru_bandera.png" alt="bandera_Perú"></a></li>
-              <li><a href="#"><img src="assets/images/chile_bandera.png" alt="bandera_Chile"></a></li>
-              <li><a href="#"><img src="assets/images/usa_bandera.png" alt="usa_bandera"></a></li>
-            </ul>
-          </div><!-- /btn-group -->*/
+ $('.phoneNumber').focus(function(){
+    var value = $('.phoneNumber').val();
+    if(value.size() != 10 || value.size() = ''){
+      $('.next-button').addClass('disabled'); //desabilitar boton
+    } 
+    if(value.size() == 10){
+      $('.next-button').removeClass('disabled');
+    };
+  });
+
+
+
+   $('.phoneNumber').val().length == 10){
+
+
+
+    $("#phone").keyup(function(){
+    if($(this).val().length == 10){
+      $("#number-next").removeAttr("disabled");
+    }else{
+      $("#number-next").attr("disabled", true);
+    }
+  });
+*/
+
+

@@ -43,3 +43,32 @@
   color: #FFF;
 }
 
+.back, .backPhone, .backVerify{
+  margin-top: 2em;
+  padding:0.2em;
+  border: 2px solid #5C5C5C;
+  border-radius: 50%;
+}
+
+.country img{
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+}
+
+.next-button, .next2{
+  background-color: #E3006E;
+  color: #FFF;
+}
+
+.next2{
+  margin-top: 3em;
+}
+
+.emailInput{
+  margin-top: 2em;
+}
+
+.terms{
+  margin-top: 1.5em;
+}

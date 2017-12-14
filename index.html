@@ -23,11 +23,6 @@
   <!-- sign up -->
   <div class="container-fluid signUp">
     <div class="row">
-      <div class="col-xs-4 col-xs-offset-4">
-        <img class="whiteLogo" src="assets/images/logo-white.png" alt="logo">
-      </div>
-    </div>
-    <div class="row">
       <div class="col-xs-10 col-xs-offset-1">
         <img class="purpleLogo" src="assets/images/Lyft_logo_purple.png" alt="logo">
       </div>
@@ -40,15 +35,17 @@
     </div>
   </div>
   <!-- Formulario sign up -->
-  <div class="container">
+  <div class="container phone">
     <div class="row">
       <div class="col-xs-12">
         <div class="col-xs-3">
-           <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="glyphicon glyphicon-chevron-left back"></span>      
         </div>       
         <div class="col-xs-9">
           <h2>Sign Up</h2>
-          <p>Join now for free ride credit</p>
+        </div>
+        <div class="col-xs-12">
+          <p class="text-center">Join now for free ride credit</p>
           <hr>
         </div>
       </div>      
@@ -56,6 +53,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="input-group">
+        <!-- dropdown con banderas -->
           <div class="input-group-btn country">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Country <span class="caret"></span></button>
             <ul class="dropdown-menu">
@@ -64,19 +62,86 @@
               <li><a href="#"><img src="assets/images/chile_bandera.png" alt="bandera_Chile"></a></li>
               <li><a href="#"><img src="assets/images/usa_bandera.png" alt="usa_bandera"></a></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
+          <!-- input para numero de telefono -->
           <div class="input-group ">
             <span class="input-group-addon">52</span>
-            <input type="text" class="form-control">
+            <input type="number" required="required"class="form-control phoneNumber">
           </div>          
-        </div><!-- /input-group -->
-      </div><!-- /.col-lg-6 -->
-      <p>We'll send a text to verify your phone</p>
-    </div><!-- /.row -->
-    <div>
-      <button type="button" class="col-xs-12 btn btn-default next-button">NEXT</button>
+        </div>
+      </div>
+      <div class="col-xs-12 text-center">
+        <p>We'll send a text to verify your phone</p>
+      </div>      
     </div>
-    <!--  -->
+    <!-- boton para ir a la sgte vista -->
+    <div>
+      <button type="button" class="col-xs-12 btn btn-default next-button disabled">NEXT</button>
+    </div>
+  </div>
+  <!-- verificación -->
+  <div class="container verifyPhone">
+    <div>
+    <!-- boton para ir atras -->
+      <div class="col-xs-3">
+        <span class="glyphicon glyphicon-chevron-left backPhone"></span>   
+      </div>
+      <div class="col-xs-9">
+        <h2>Verify phone number</h2>       
+      </div>
+      <div class="col-xs-12">
+        <h4 class="text-center">Join now for free ride credit</h4>
+        <!-- input para codigo -->
+        <p class="text-center">LAB-<input type="number" class="inputCode"></p>
+        <p class="text-center">Enter the code sent to +52</p>
+      </div>
+      <!-- boton para reenviar codigo -->
+      <div class="row">
+        <button type="button" class="btn btn-default btn-sm resend-button col-xs-4 col-xs-offset-4">Resend code</button>       
+      </div>
+      <!-- boton para el sgte paso -->
+      <div class="col-xs-12">
+        <button type="button" class="col-xs-12 btn btn-default next2 disabled">NEXT</button>
+      </div>      
+    </div>
+  </div>
+  <!-- Nombre y correo -->
+  <div class="container name">
+    <div class="row">
+    <!-- icono para ir atras -->
+      <div class="col-xs-3">
+        <span class="glyphicon glyphicon-chevron-left backVerify"></span>  
+      </div>
+      <div class="col-xs-9">
+        <h2>Sign up</h2>       
+      </div>
+      <div class="col-xs-12">
+        <h4 class="text-center">Join now for free ride credit</h4>
+        <!-- input nombre -->
+        <div class="input-group nameInput">
+          <span class="input-group-addon glyphicon glyphicon-user"></span>
+          <input type="text" required="required" class="form-control phoneNumber">
+        </div>
+        <!-- input email -->
+        <div class="input-group emailInput">
+          <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+          <input type="text" required="required" class="form-control phoneNumber">
+        </div>           
+      </div>
+      <!-- checkbox aceptar terminos -->
+      <div class="container">
+        <div class="col-xs-1 terms check">
+          <input type="checkbox">
+        </div>
+        <div class="col-xs-10 terms">
+          <p>I agree to Lyft's <a href="#">Terms of Service</a></p>
+        </div>
+      </div>
+      <!-- boton para el sgte paso -->
+      <div class="col-xs-12">
+        <button type="button" class="col-xs-12 btn btn-default next2 disabled">NEXT</button>
+      </div> 
+    </div>
   </div>
   <!-- scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
