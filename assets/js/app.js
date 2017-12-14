@@ -88,6 +88,11 @@ $(document).ready(function(){
     $('.name').hide();
     $('.final').show();
   });
+  //limpiar inputs
+  $('input[type="number"]').focus(
+    function(){
+        $(this).val('');
+    });
 });
 
  
