@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.signUp, .phone, .verifyPhone, .name').hide();
+  $('.signUp, .phone, .verifyPhone, .name, .final').hide();
   $('.splash').show();
   splash(3000);
   //funcion pagina splash
@@ -19,13 +19,14 @@ $(document).ready(function(){
     $('.phone').hide();
     $('.signUp').show();
   });
-  //boton deshabilitado por defecto  
+  //boton deshabilitado por defecto 
   $('.phoneNumber').keyup(function(){
-    if($('.phoneNumber').val().length == '' || $('.phoneNumber').val().length != 10){
-      $('.next-button').Attr('disabled',true)
+    if($(this).val().length == 10){
+      $(".next-button").removeAttr("disabled");
+      $(".next-button").removeClass("disabled");
     }else{
-      $('.next-button').removeAttr('disabled'); //desabilitar boton);
-    };
+      $(".next-button").attr("disabled", true);
+    }
   });
   //codigo
   function code() {
@@ -58,19 +59,20 @@ $(document).ready(function(){
     $('.name').show();
   });
   //deshabilitar boton next
-  $('.phoneNumber').keyup(function(){
-    if($('.phoneNumber').val().length == '' || $('.phoneNumber').val().length != 3){
-      $('.next-button').Attr('disabled',true)
+  $('.inputCode').keyup(function(){
+    if($(this).val().length == 3){
+      $(".next2").removeAttr("disabled");
+      $(".next2").removeClass("disabled");
     }else{
-      $('.next-button').removeAttr('disabled'); //desabilitar boton);
-    };
+      $(".next2").attr("disabled", true);
+    }
   });
   //seccion de nombre y correo
   //boton para volver a seccion anterior 
   $('.backVerify').click(function(){
     $('.name').hide();
     $('.verifyPhone').show();
-  });
+  });  
   //habilitar el boton si y solo si todas las condiciones se cumplen
   /*
    $('.').(function(){
@@ -81,7 +83,11 @@ $(document).ready(function(){
     };
   });
   */
-
+  //vista siguiente-final
+  $('.next3').click(function(){
+    $('.name').hide();
+    $('.final').show();
+  });
 });
 
  
@@ -89,7 +95,7 @@ $(document).ready(function(){
 
 
 /*
- $('.phoneNumber').focus(function(){
+ $('.phoneNumber').keyup(function(){
     var value = $('.phoneNumber').val();
     if(value.size() != 10 || value.size() = ''){
       $('.next-button').addClass('disabled'); //desabilitar boton
@@ -99,17 +105,11 @@ $(document).ready(function(){
     };
   });
 
-
-
-   $('.phoneNumber').val().length == 10){
-
-
-
-    $("#phone").keyup(function(){
+    $(".phoneNumber").keyup(function(){
     if($(this).val().length == 10){
-      $("#number-next").removeAttr("disabled");
+      $(".next-button").removeAttr("disabled");
     }else{
-      $("#number-next").attr("disabled", true);
+      $(".next-button").attr("disabled", true);
     }
   });
 */
